@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+    Find a chlamydia test - NHS
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  items: [
+    {
+      href: "/level-one/level-two",
+      text: "Home"
+    }
+  ],
+  href: "/level-one/level-two/level-three",
+  text: "Services near you"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+              <form action="/get-a-test/" method="post">
+
+<h1 class="nhsuk-fieldset__legend--l">
+        <span class="nhsuk-caption-l">Step 3 of 4</span>
+        How do you want to get a test?
+      </h1>
+
+
+        <div class="nhsuk-form-group">
+
+
+
+            {{ radios({
+          "idPrefix": "symptoms",
+          "name": "symptoms",
+          "items": [
+            {
+              "value": "answer-see",
+              "text": "See a sexual health professional near you"
+            },
+            {
+              "value": "answer-buy",
+              "text": "Buy a test kit near you"
+            }
+          ]
+        }) }}
+
+
+
+
+      
+<button class="nhsuk-button nhsuk-u-margin-top-4" type="submit">
+  Continue
+</button>
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

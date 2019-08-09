@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% set mainClasses = 'nhsuk-main-wrapper--s' %}
+
+{% block pageTitle %}
+    Find a chlamydia test - NHS
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  items: [
+    {
+      href: "/level-one/level-two",
+      text: "Home"
+    }
+  ],
+  href: "/level-one/level-two/level-three",
+  text: "Services near you"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+              <form action="/symptoms/age" method="post">
+
+<h1 class="nhsuk-fieldset__legend--l">
+        <span class="nhsuk-caption-l">Step 2 of 4</span>
+        How old are you?
+      </h1>
+
+
+        {{ radios({
+          "idPrefix": "symptoms",
+          "name": "symptoms",
+          "items": [
+            {
+              "value": "15 or younger",
+              "text": "15 or younger"
+            },
+            {
+              "value": "16 to 24",
+              "text": "16 to 24"
+            },
+            {
+              "value": "25 or older",
+              "text": "25 or older"
+            }
+          ]
+        }) }}
+
+
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+
+
+        </form>
+
+    </div>
+  </div>
+{% endblock %}

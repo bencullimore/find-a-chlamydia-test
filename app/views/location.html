@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+    Find a chlamydia test - NHS
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  items: [
+    {
+      href: "/level-one/level-two",
+      text: "Home"
+    }
+  ],
+  href: "/level-one/level-two/level-three",
+  text: "Services near you"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+<form action="/results" method="post">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__legend--l nhsuk-u-margin-bottom-0">
+        <span class="nhsuk-caption-l">Step 4 of 4</span>
+        Where would you like to see a sexual health professional?
+      </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="postcode">
+              Enter a postcode in England
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-three-quarters" id="postcode" name="postcode" value="{{ data['postcode'] }}" type="text">
+          </div>
+        </fieldset>
+        <button class="nhsuk-button">Continue</button>
+      </form>
+  
+
+
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  items: [
+    {
+      href: "/level-one/level-two",
+      text: "Home"
+    }
+  ],
+  href: "/level-one/level-two/level-three",
+  text: "Services near you"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+          <form action="/symptoms/answer" method="post">
+
+
+
+
+
+
+
+
+      <h1 class="nhsuk-fieldset__legend--l">
+        <span class="nhsuk-caption-l">Step 1 of 4</span>
+        Do you have any of these symptoms?
+      </h1>
+
+        <ul>
+          <li>pain when peeing</li>
+          <li>discharge from your bottom</li>
+          <li>vaginal discharge that's not usual for you</li>
+          <li>bleeding between periods</li>
+          <li>bleeding during or after sex</li>
+          <li>pelvic pain (in your lower tummy) - you may have this during sex</li>
+          <li>discharge from your penis</li>
+          <li>pain in your testicles</li>
+        </ul>
+
+        {{ radios({
+          "idPrefix": "symptoms",
+          "name": "symptoms",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes - I have one or more of these symptoms"
+            },
+            {
+              "value": "No",
+              "text": "No - I don't have any of these symptoms"
+            }
+          ]
+        }) }}
+
+
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+      
+
+    </div>
+  </div>
+
+{% endblock %}
